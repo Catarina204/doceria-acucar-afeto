@@ -202,3 +202,264 @@ button:hover {
     top: 16px;
   }
 }
+
+/* Propaganda da loja */
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  background: var(--manteiga);
+  border-radius: 32px;
+  box-shadow: 0 6px 0 #f3e3b8;
+  text-align: center;
+  padding: 32px 20px;
+  margin: 24px 16px 0;
+}
+
+.hero h2 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-size: 1.9rem;
+  color: #b8697b;
+}
+
+.hero p {
+  margin: 0 0 18px;
+}
+
+.botao-destaque {
+  display: inline-block;
+  background: var(--rosa-escuro);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+}
+
+.botao-destaque:hover {
+  background: #d894a4;
+}
+
+.beneficios {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  margin: 22px 0 0;
+}
+
+.beneficios li {
+  background: white;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#catalogo {
+  scroll-margin-top: 16px;
+}
+
+.card {
+  position: relative;
+}
+
+.selo {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--manteiga);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rodape {
+  background: var(--rosa);
+  text-align: center;
+  padding: 24px 16px;
+  margin-top: 16px;
+  border-radius: 40px 40px 0 0;
+  border-top: 5px dotted white;
+}
+
+.rodape p {
+  margin: 4px 0;
+}
+
+.rodape-nome {
+  font-family: "Pacifico", cursive;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    max-width: 1068px;
+    margin: 28px auto 0;
+    padding: 44px 20px;
+  }
+
+  .hero h2 {
+    font-size: 2.6rem;
+  }
+}
+
+/* Finalizar pedido */
+.finalizar {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.fundo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(122, 85, 96, 0.45);
+}
+
+.modal {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 360px;
+  padding: 28px 24px;
+  text-align: center;
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 6px 0 var(--rosa);
+}
+
+.modal-img {
+  width: 170px;
+  border-radius: 24px;
+}
+
+.pulando {
+  animation: pular 0.8s ease-in-out infinite;
+}
+
+.festa {
+  animation: surgir 0.5s ease-out;
+}
+
+.pontinhos {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.pontinhos span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rosa-escuro);
+  animation: pular-pontinho 0.8s ease-in-out infinite;
+}
+
+.pontinhos span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.pontinhos span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.coracao {
+  position: absolute;
+  bottom: -20px;
+  color: var(--rosa-escuro);
+  font-size: 1.6rem;
+  opacity: 0;
+  animation: subir 3s ease-in infinite;
+}
+
+.c1 {
+  left: 15%;
+}
+
+.c2 {
+  left: 50%;
+  animation-delay: 1s;
+}
+
+.c3 {
+  left: 80%;
+  animation-delay: 2s;
+}
+
+@keyframes pular {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(4deg);
+  }
+}
+
+@keyframes surgir {
+  0% {
+    transform: scale(0.6);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pular-pontinho {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-330px);
+    opacity: 0;
+  }
+}
+
+/* Foto real ao passar o mouse */
+.imagem {
+  position: relative;
+  height: 190px;
+}
+
+.imagem img {
+  height: 100%;
+}
+
+.foto-real {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.card:hover .foto-real {
+  opacity: 1;
+}

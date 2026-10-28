@@ -36,12 +36,16 @@ export function CartProvider({ children }) {
     setItens((atual) => atual.filter((item) => item.id !== id));
   }
 
+  function limpar() {
+    setItens([]);
+  }
+
   const total = itens.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
   const quantidadeTotal = itens.reduce((soma, item) => soma + item.quantidade, 0);
 
   return (
     <CartContext.Provider
-      value={{ itens, adicionar, aumentar, diminuir, remover, total, quantidadeTotal }}
+      value={{ itens, adicionar, aumentar, diminuir, remover, limpar, total, quantidadeTotal }}
     >
       {children}
     </CartContext.Provider>

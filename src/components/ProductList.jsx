@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 
 function ProductList() {
   return (
-    <section>
+    <section id="catalogo">
       <h2>Nossos doces</h2>
       <div className="lista">
         {produtos.map((produto) => (

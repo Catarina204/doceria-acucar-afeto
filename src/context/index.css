@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap");
+
+:root {
+  --fundo: #fff8f6;
+  --rosa: #fadfe5;
+  --rosa-escuro: #e6a8b6;
+  --verde: #e1ecd8;
+  --manteiga: #fdf2d6;
+  --lilas: #eee2f2;
+  --texto: #7a5560;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--texto);
+  font-family: "Quicksand", sans-serif;
+  background-color: var(--fundo);
+  background-image: radial-gradient(var(--rosa) 2px, transparent 2px);
+  background-size: 28px 28px;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  margin: 0;
+}
+
+h2, h3 {
+  margin: 0 0 10px;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  background: var(--rosa-escuro);
+  color: white;
+  padding: 8px 16px;
+}
+
+button:hover {
+  background: #d894a4;
+}
+
+/* Cabeçalho */
+.header {
+  background: var(--rosa);
+  text-align: center;
+  padding: 28px 16px 32px;
+  border-radius: 0 0 40px 40px;
+  border-bottom: 5px dotted white;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+}
+
+.header p {
+  margin: 4px 0 14px;
+}
+
+.contador {
+  background: white;
+  padding: 5px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.contador::before {
+  content: "♡ ";
+}
+
+/* Layout (celular primeiro) */
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.lista {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 0 var(--rosa);
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-texto {
+  padding: 14px 16px 18px;
+}
+
+.card-texto p {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+}
+
+.card-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Carrinho */
+.carrinho {
+  background: var(--manteiga);
+  border-radius: 24px;
+  padding: 18px;
+  align-self: flex-start;
+  width: 100%;
+  box-shadow: 0 6px 0 #f3e3b8;
+}
+
+.carrinho ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carrinho li {
+  padding: 10px 0;
+  border-bottom: 2px dotted var(--rosa-escuro);
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.item-botoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-botoes button {
+  padding: 4px 12px;
+}
+
+.item-botoes .remover {
+  margin-left: auto;
+  background: var(--verde);
+  color: var(--texto);
+}
+
+.item-botoes .remover:hover {
+  background: #d3e2c7;
+}
+
+.total {
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.vazio {
+  font-size: 0.9rem;
+}
+
+/* Telas maiores */
+@media (min-width: 700px) {
+  .lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .conteudo {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .conteudo section {
+    flex: 1;
+  }
+
+  .carrinho {
+    width: 320px;
+    position: sticky;
+    top: 16px;
+  }
+}
+
+/* Propaganda da loja */
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  background: var(--manteiga);
+  border-radius: 32px;
+  box-shadow: 0 6px 0 #f3e3b8;
+  text-align: center;
+  padding: 32px 20px;
+  margin: 24px 16px 0;
+}
+
+.hero h2 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-size: 1.9rem;
+  color: #b8697b;
+}
+
+.hero p {
+  margin: 0 0 18px;
+}
+
+.botao-destaque {
+  display: inline-block;
+  background: var(--rosa-escuro);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+}
+
+.botao-destaque:hover {
+  background: #d894a4;
+}
+
+.beneficios {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  margin: 22px 0 0;
+}
+
+.beneficios li {
+  background: white;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#catalogo {
+  scroll-margin-top: 16px;
+}
+
+.card {
+  position: relative;
+}
+
+.selo {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--manteiga);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rodape {
+  background: var(--rosa);
+  text-align: center;
+  padding: 24px 16px;
+  margin-top: 16px;
+  border-radius: 40px 40px 0 0;
+  border-top: 5px dotted white;
+}
+
+.rodape p {
+  margin: 4px 0;
+}
+
+.rodape-nome {
+  font-family: "Pacifico", cursive;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    max-width: 1068px;
+    margin: 28px auto 0;
+    padding: 44px 20px;
+  }
+
+  .hero h2 {
+    font-size: 2.6rem;
+  }
+}

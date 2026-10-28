@@ -1,8 +1,16 @@
+import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { formatarPreco } from "../formatar";
+import PedidoModal from "./PedidoModal";
 
 function Cart() {
-  const { itens, aumentar, diminuir, remover, total } = useCart();
+  const { itens, aumentar, diminuir, remover, limpar, total } = useCart();
+  const [finalizando, setFinalizando] = useState(false);
+
+  function fecharPedido() {
+    limpar();
+    setFinalizando(false);
+  }
 
   return (
     <aside className="carrinho">
@@ -33,8 +41,13 @@ function Cart() {
           <p className="total">
             Total: <strong>{formatarPreco(total)}</strong>
           </p>
+          <button className="finalizar" onClick={() => setFinalizando(true)}>
+            Finalizar pedido
+          </button>
         </>
       )}
+
+      {finalizando && <PedidoModal aoFechar={fecharPedido} />}
     </aside>
   );
 }
