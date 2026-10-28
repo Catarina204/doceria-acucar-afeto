@@ -1,111 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap");
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --fundo: #fff8f6;
+  --rosa: #fadfe5;
+  --rosa-escuro: #e6a8b6;
+  --verde: #e1ecd8;
+  --manteiga: #fdf2d6;
+  --lilas: #eee2f2;
+  --texto: #7a5560;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+  color: var(--texto);
+  font-family: "Quicksand", sans-serif;
+  background-color: var(--fundo);
+  background-image: radial-gradient(var(--rosa) 2px, transparent 2px);
+  background-size: 28px 28px;
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+h2, h3 {
+  margin: 0 0 10px;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+button {
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  background: var(--rosa-escuro);
+  color: white;
+  padding: 8px 16px;
+}
+
+button:hover {
+  background: #d894a4;
+}
+
+/* Cabeçalho */
+.header {
+  background: var(--rosa);
+  text-align: center;
+  padding: 28px 16px 32px;
+  border-radius: 0 0 40px 40px;
+  border-bottom: 5px dotted white;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+}
+
+.header p {
+  margin: 4px 0 14px;
+}
+
+.contador {
+  background: white;
+  padding: 5px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.contador::before {
+  content: "♡ ";
+}
+
+/* Layout (celular primeiro) */
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.lista {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 0 var(--rosa);
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-texto {
+  padding: 14px 16px 18px;
+}
+
+.card-texto p {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+}
+
+.card-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Carrinho */
+.carrinho {
+  background: var(--manteiga);
+  border-radius: 24px;
+  padding: 18px;
+  align-self: flex-start;
+  width: 100%;
+  box-shadow: 0 6px 0 #f3e3b8;
+}
+
+.carrinho ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carrinho li {
+  padding: 10px 0;
+  border-bottom: 2px dotted var(--rosa-escuro);
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.item-botoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-botoes button {
+  padding: 4px 12px;
+}
+
+.item-botoes .remover {
+  margin-left: auto;
+  background: var(--verde);
+  color: var(--texto);
+}
+
+.item-botoes .remover:hover {
+  background: #d3e2c7;
+}
+
+.total {
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.vazio {
+  font-size: 0.9rem;
+}
+
+/* Telas maiores */
+@media (min-width: 700px) {
+  .lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .conteudo {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .conteudo section {
+    flex: 1;
+  }
+
+  .carrinho {
+    width: 320px;
+    position: sticky;
+    top: 16px;
+  }
 }
